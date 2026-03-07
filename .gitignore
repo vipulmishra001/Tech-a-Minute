@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-ssr/
+*.log
+*.tmp
+*.cache
+
+# Local data file for scores
+server/leaderboard.json
+
+.DS_Store
+Thumbs.db
+
