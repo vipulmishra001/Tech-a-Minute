@@ -1,0 +1,23 @@
+{
+  "name": "tech-a-minute",
+  "version": "1.0.0",
+  "description": "Tech a Minute – a fast-paced 60-second technology quiz game with an optional Node.js leaderboard backend.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "keywords": [
+    "quiz",
+    "javascript",
+    "web",
+    "game",
+    "tech"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
+

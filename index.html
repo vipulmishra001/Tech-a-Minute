@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech a Minute</title>
+    <meta
+      name="description"
+      content="Tech a Minute is a fast-paced 60-second technology quiz game. Answer as many questions as you can and climb the leaderboard."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="background-gradient"></div>
+    <main class="app-shell">
+      <header class="app-header">
+        <div class="logo-mark">
+          <span class="logo-bolt">⚡</span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Tech a Minute</span>
+          <span class="brand-tagline">60 seconds. Infinite questions.</span>
+        </div>
+      </header>
+
+      <section id="home-screen" class="card screen screen-active">
+        <div class="card-inner">
+          <h1 class="title">Tech a Minute</h1>
+          <p class="subtitle">
+            A fast-paced tech quiz. You have
+            <span class="highlight">60 seconds</span> to answer as many
+            questions as you can.
+          </p>
+
+          <div class="input-group">
+            <label for="player-name">Your name</label>
+            <input
+              type="text"
+              id="player-name"
+              maxlength="18"
+              placeholder="Enter a cool nickname"
+              autocomplete="off"
+            />
+          </div>
+
+          <button id="start-button" class="btn primary-btn">
+            Start Game
+          </button>
+
+          <p class="helper-text">
+            Tip: Faster answers mean more questions before the clock hits zero.
+          </p>
+
+          <div class="home-footer">
+            <div class="pill">
+              <span class="dot live-dot"></span>
+              <span>60s timed mode</span>
+            </div>
+            <div class="pill pill-muted">
+              <span>Tech topics: Web • AI • CS • Security</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="game-screen" class="card screen screen-hidden">
+        <div class="card-inner">
+          <div class="game-header">
+            <div class="timer-block">
+              <span class="label">Time left</span>
+              <div class="timer-row">
+                <span id="timer-value" class="timer-value">60</span>
+                <span class="timer-unit">sec</span>
+              </div>
+              <div class="timer-bar-track">
+                <div id="timer-bar" class="timer-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="score-block">
+              <span class="label">Score</span>
+              <div id="score-value" class="score-value">0</div>
+            </div>
+          </div>
+
+          <div class="question-area">
+            <div id="question-text" class="question-text">
+              Loading question...
+            </div>
+            <div class="options-grid">
+              <button class="btn option-btn" data-index="0"></button>
+              <button class="btn option-btn" data-index="1"></button>
+              <button class="btn option-btn" data-index="2"></button>
+              <button class="btn option-btn" data-index="3"></button>
+            </div>
+          </div>
+
+          <div class="game-footer">
+            <div class="pill pill-muted">
+              <span>One minute to prove your tech knowledge.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="end-screen" class="card screen screen-hidden">
+        <div class="card-inner">
+          <h2 class="title">Time&rsquo;s up!</h2>
+          <p class="subtitle end-summary">
+            <span id="summary-name" class="summary-name">Player</span>, your
+            final score is
+            <span id="summary-score" class="summary-score">0</span>.
+          </p>
+
+          <div class="leaderboard-card">
+            <div class="leaderboard-header">
+              <h3>Leaderboard</h3>
+              <span class="leaderboard-caption">Top 10 scores</span>
+            </div>
+            <div class="leaderboard-table-wrapper">
+              <table class="leaderboard-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                  <!-- Filled via JavaScript -->
+                </tbody>
+              </table>
+              <p id="leaderboard-empty" class="leaderboard-empty">
+                No scores yet. Be the first to claim the board.
+              </p>
+            </div>
+          </div>
+
+          <button id="play-again-button" class="btn primary-btn">
+            Play Again
+          </button>
+
+          <p class="helper-text">
+            Scores are stored on this device using local storage so you can
+            compete with yourself or share this page with friends.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
